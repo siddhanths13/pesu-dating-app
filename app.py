@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, session, url_for, g, jsonify
 import sqlite3
 from pathlib import Path
@@ -7,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "dating.db"
 
 app = Flask(__name__)
-app.secret_key = "dev-secret-change-me"
+app.secret_key = os.getenv("SECRET_KEY", "dev-secret-change-me")
 
 
 def get_db():
@@ -72,6 +73,10 @@ def init_db():
     )
     db.commit()
     db.close()
+
+
+if not DB_PATH.exists():
+    init_db()
 
 
 def current_user():
