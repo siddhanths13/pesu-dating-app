@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Discover</h2>
+{% if candidate %}
+<div class="card" id="candidate-card" data-id="{{ candidate.id }}">
+  <h3>{{ candidate.name }}</h3>
+  <p><strong>Branch:</strong> {{ candidate.branch or 'Not set' }}</p>
+  <p>{{ candidate.bio or 'No bio yet' }}</p>
+  <p><strong>Interests:</strong> {{ candidate.interests or 'Not set' }}</p>
+  <div class="actions">
+    <button onclick="swipe(0)">Dislike</button>
+    <button onclick="swipe(1)">Like</button>
+  </div>
+  <p id="status"></p>
+</div>
+{% else %}
+<p>No more profiles right now. Check back later.</p>
+{% endif %}
+<script src="{{ url_for('static', filename='js/swipe.js') }}"></script>
+{% endblock %}
