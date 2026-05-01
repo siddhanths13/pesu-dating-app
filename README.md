@@ -48,3 +48,16 @@ pesu-dating-app/
    python app.py
    ```
 4. Open: `http://127.0.0.1:5000`
+
+## Deploy and Share (Render)
+
+You can deploy this app for free and share a public URL:
+
+1. Push this repo to GitHub.
+2. Go to Render Dashboard and click **New +** → **Blueprint**.
+3. Select your GitHub repo (Render will detect `render.yaml`).
+4. Click **Apply** to deploy.
+5. After deployment, Render gives a public URL like:
+   - `https://pes-dating-app.onrender.com`
+
+Share that URL with others.
