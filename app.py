@@ -8,6 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "dating.db"
 
 app = Flask(__name__, template_folder="app/templates", static_folder="app/static")
+app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "dev-secret-change-me")
 
 
