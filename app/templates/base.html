@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PES Dating</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>PES Dating</h1>
+    <div>
+      <a href="{{ url_for('discover') }}">Discover</a>
+      <a href="{{ url_for('matches') }}">Matches</a>
+      <a href="{{ url_for('profile') }}">Profile</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </nav>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

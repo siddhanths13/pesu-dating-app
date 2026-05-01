@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Matches</h2>
+{% if matches %}
+<ul class="list">
+  {% for m in matches %}
+  <li>
+    <strong>{{ m.name }}</strong> ({{ m.branch or 'Branch not set' }})
+    <a href="{{ url_for('chat', other_id=m.other_id) }}">Chat</a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No matches yet.</p>
+{% endif %}
+{% endblock %}
