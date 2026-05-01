@@ -1,14 +1,12 @@
-import os
 from flask import Flask, render_template, request, redirect, session, url_for, g, jsonify
 import sqlite3
 from pathlib import Path
-from werkzeug.security import generate_password_hash, check_password_hash
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "dating.db"
 
 app = Flask(__name__, template_folder="app/templates", static_folder="app/static")
-app.secret_key = os.getenv("SECRET_KEY", "dev-secret-change-me")
+app.secret_key = "dev-secret-change-me"
 
 
 def get_db():
